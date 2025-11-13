@@ -1,16 +1,19 @@
 import React from "react";
-import HeroBanner from "./HeroBanner";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import AboutUs from "./AboutUs";
+import Faqs from "../common/Faqs/Faqs";
+import Blogs from "./Blogs";
 
 const LandingPage = () => {
   return (
     <>
-      <HeroBanner />
-
       <AboutUs />
+
+      <Faqs />
+
+      <Blogs />
     </>
   );
 };

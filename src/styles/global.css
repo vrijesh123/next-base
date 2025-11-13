@@ -70,7 +70,7 @@ body {
   font-weight: var(--bs-body-font-weight);
   line-height: var(--bs-body-line-height);
   text-align: var(--bs-body-text-align);
-  background-color: #F5F1E9;
+  background-color: white;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   background-repeat: repeat;
@@ -128,7 +128,7 @@ button {
 
 .floating-nav {
   background-color: transparent;
-  background-color: #F5F1E9;
+  background-color: white;
   border-bottom: 1px solid #C6C6C6;
   /* Adjust opacity */
   backdrop-filter: blur(6px);
@@ -598,7 +598,7 @@ span {
 .content-wrapper {
   /* //for sidenav apply this style */
   flex: 1;
-  background-color: #F5F1E9;
+  background-color: white;
   min-height: 100dvh;
   padding-top: 60px;
 }
@@ -2236,24 +2236,24 @@ h2 {
   padding: 10px 15px;
   background-color: #000;
   border-radius: 16px;
-  max-width: 280px;
+  max-width: 220px;
 }
 @media screen and (max-width: 900px) {
   .wolfx-badge {
-    max-width: 220px;
+    max-width: 200px;
   }
 }
 .wolfx-badge svg {
   width: 50px;
 }
 .wolfx-badge p {
-  font-size: 16px;
+  font-size: 14px;
   color: white;
-  line-height: 24px;
+  font-weight: 500;
+  line-height: 130%;
 }
 @media screen and (max-width: 900px) {
   .wolfx-badge p {
     font-size: 12px;
-    line-height: 16px;
   }
 }

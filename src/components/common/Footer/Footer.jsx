@@ -64,12 +64,16 @@ const Footer = () => {
             <ul>
               {settings?.email && (
                 <li>
-                  Email : <span>{settings?.email}</span>
+                  <a href={`mailto:${settings?.email}`}>
+                    Email : <span>{settings?.email}</span>
+                  </a>
                 </li>
               )}
               {settings?.contact_number && (
                 <li>
-                  Phone : <span>{settings?.contact_number}</span>
+                  <a href={`tel:${settings?.contact_number}`}>
+                    Phone : <span>{settings?.contact_number}</span>
+                  </a>
                 </li>
               )}
             </ul>

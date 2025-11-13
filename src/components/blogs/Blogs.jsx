@@ -156,9 +156,9 @@ const Blogs = () => {
         <div className="blogs-page-container">
           <div className="blog-filter">
             <div className="search-container">
-              <div className="icon-container">
+              {/* <div className="icon-container">
                 <img src="/icons/search.svg" alt="" />
-              </div>
+              </div> */}
               <input
                 type="text"
                 placeholder="Search..."

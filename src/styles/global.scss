@@ -63,7 +63,7 @@
 
 // Color Schemes
 
-$main-bgColor: #F5F1E9;
+$main-bgColor: #FFFF;
 
 $rating-color: #FFBB55;
 $black: #202020;
@@ -2588,10 +2588,10 @@ h2 {
     padding: 10px 15px;
     background-color: #000;
     border-radius: 16px;
-    max-width: 280px;
+    max-width: 220px;
 
     @media screen and (max-width: 900px) {
-        max-width: 220px;
+        max-width: 200px;
     }
 
     svg {
@@ -2599,13 +2599,13 @@ h2 {
     }
 
     p {
-        font-size: 16px;
+        font-size: 14px;
         color: #FFFF;
-        line-height: 24px;
+        font-weight: 500;
+        line-height: 130%;
 
         @media screen and (max-width: 900px) {
             font-size: 12px;
-            line-height: 16px;
         }
     }
 }

@@ -1,15 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
 ("swiper");
 import Heading from "../common/Heading";
+import { useInView } from "react-intersection-observer";
+import CountUp from "react-countup";
 
 const AboutUs = () => {
-  const language = [
-    "Hi, I’m Dr. Guinwa Khaddaj, a multilingual Gastroenterologist, Hepatologist, and Endoscopist.",
-    "Hola, soy la Dra. Guinwa Khaddaj, gastroenteróloga, hepatóloga y endoscopista multilingüe.",
-    "مرحبًا، أنا الدكتورة جينوى حداد، أخصائية أمراض الجهاز الهضمي والكبد والمناظير وأتحدث عدة لغات.",
-  ];
+  const [hasAnimated, setHasAnimated] = useState(false);
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Trigger only once
+    threshold: 0.1, // Percentage of the component visible to trigger the animation
+  });
+
   return (
     <section>
       <div className="container">
@@ -32,17 +35,41 @@ const AboutUs = () => {
               journey to wellness with professionalism, warmth, and empathy.
             </p>
 
-            <div className="counts">
+            <div className="counts" ref={ref}>
               <div className="count">
-                <span>15+</span>
+                {inView && !hasAnimated && (
+                  <CountUp
+                    start={0}
+                    end={15}
+                    duration={3}
+                    onEnd={() => setHasAnimated(true)}
+                  />
+                )}
+                {!inView || (hasAnimated && <span>15+</span>)}
                 <p>Years of Experience</p>
               </div>
               <div className="count center">
-                <span>250+</span>
+                {inView && !hasAnimated && (
+                  <CountUp
+                    start={0}
+                    end={250}
+                    duration={3}
+                    onEnd={() => setHasAnimated(true)}
+                  />
+                )}
+                {!inView || (hasAnimated && <span>250+</span>)}
                 <p>Number of endoscopies</p>
               </div>
               <div className="count">
-                <span>50+</span>
+                {inView && !hasAnimated && (
+                  <CountUp
+                    start={0}
+                    end={50}
+                    duration={3}
+                    onEnd={() => setHasAnimated(true)}
+                  />
+                )}
+                {!inView || (hasAnimated && <span>50+</span>)}
                 <p>Number of Colonoscopies</p>
               </div>
             </div>
@@ -51,35 +78,6 @@ const AboutUs = () => {
           <div className="right">
             <div className="img-container">
               <img src="/images/about-us.png" alt="About Us" />
-            </div>
-
-            <div className="lang">
-              <div className="lang-content">
-                <Swiper
-                  spaceBetween={0}
-                  slidesPerView={1}
-                  loop={true}
-                  autoplay={{
-                    delay: 5000,
-                    disableOnInteraction: false,
-                  }}
-                  pagination={{
-                    el: ".swiper-pagination",
-                  }}
-                  modules={[Autoplay, Pagination, Navigation]}
-                >
-                  {language?.map((lang) => (
-                    <SwiperSlide>
-                      <p>{lang}</p>
-                    </SwiperSlide>
-                  ))}
-                </Swiper>
-              </div>
-
-              <div className="languages">
-                <h6>Languages Spoken</h6>
-                <p>🇺🇸 English &nbsp; 🇪🇸 Spanish &nbsp; 🇦🇪 Arabic</p>
-              </div>
             </div>
           </div>
         </div>
